@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учет личных финансов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Мои финансы</h1>
+        <p>Система учета личных финансов</p>
+    </header>
+    <main class="container">
+        <section class="dashboard">
+            <div class="card balance-card">
+                <h3>Общий баланс</h3>
+                <p id="balance">0 ₽</p>
+            </div>
+            <div class="card">
+                <h3>Доходы</h3>
+                <p id="income">0 ₽</p>
+            </div>
+            <div class="card">
+                <h3>Расходы</h3>
+                <p id="expenses">0 ₽</p>
+            </div>
+        </section>
+        <section class="form-section">
+            <h2>Добавить операцию</h2>
+            <form id="transaction-form">
+                <select id="type" required>
+                    <option value="income">Доход</option>
+                    <option value="expense">Расход</option>
+                </select>
+                <input 
+                type="text"
+                id="title"
+                placeholder="Название операции"
+                required
+                >
+                <input 
+                type="number"
+                id="amount"
+                placeholder="Сумма"
+                min="0.01"
+                step="0.01"
+                required
+                >
+                <select id="category" required>
+                    <option value="Работа">Работа</option>
+                    <option value="Продукты">Продукты</option>
+                    <option value="Транспорт">Транспорт</option>
+                    <option value="Развлечения">Развлечения</option>
+                    <option value="Прочее">Прочее</option>
+                </select>
+                <input 
+                type="date"
+                id="date"
+                required
+                >
+                <textarea 
+                id="comment"
+                placeholder="Комментарий"
+                ></textarea>
+                <button type="submit">
+                    Добавить операцию
+                </button>
+            </form>
+        </section>
+        <section class="transactions-section">
+            <h2>История операций</h2>
+            <div id="transactions-list"></div>
+        </section>
+        <section class="statistics-section">
+            <h2>Статистика</h2>
+            <div id="statistics"></div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
